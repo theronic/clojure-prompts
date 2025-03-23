@@ -47,6 +47,6 @@ Elements of Clojure is the book I would have written about Clojure, if I could. 
 
 I added guidelines for Electric v3 because models with a knowledge cut-off in 2024  tend to output Electric v2 code even when I ask for v3 code.
 
-[Electric Clojure v3](https://electric.hyperfiddle.net/) is being actively developed and some of these guidelines are almost certainly wrong – sorry about that! Hapay to fix.
+[Electric Clojure v3](https://electric.hyperfiddle.net/) is being actively developed and some of these guidelines are almost certainly wrong – sorry about that! Happy to fix as discovered :).
 
 PRs welcome if they improve outcomes.
