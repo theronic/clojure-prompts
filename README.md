@@ -6,26 +6,40 @@ These guidelines were derived by Claude Sonnet 3.7 by reading various books & Cl
 
 ## Goal
 
-As we enter the 4th Industrial Revolution, I hope thas this repo can be a starting point to bring idiomatic Clojure to AI models.
+As we enter the 4th Industrial Revolution, I hope that this repo can be a starting point to bring idiomatic Clojure to AI models.
 
 Currently the files are quite long and could be more concise, but I would rather err on the side of verbosity.
 
-## How to Use These Prompts
+## How to Use These Clojure Prompts
 
-TODO: but basically put these *.mdc files under `.cursor/rules` in your project and mention them in `CLAUDE.md` and/or `.cursor/README.md` file.
+If you're using Cursor, you'll want to add these `*.mdc` files under `.cursor/rules` in your workspace. Here's how:
 
-A more convenient way to stay up-to-date with the latest versions will be to use a git submodule. I'm not sure how to do that without clobbering other files in your `.cursor/rules` path.
+1. `cd ~/my-project`
+2. `cd .cursor/rules` or make `.cursor/rules` dir
+3. `git clone git@github.com:theronic/clojure-prompts.git clojure` (now you'll have .cursor/rules/clojure/*.mdc)
+4. Update your `.cursor/rules/README.md` and mention something like alongside your other architecture rules:
+
+```markdown
+## Language-Specific Rules
+
+- **[Clojure Rules](./clojure/clojure-rules.mdc)**: Clojure development guidelines
+- **[Electric Clojure v3 Rules](./clojure/electric-clojure-v3.mdc)**: Electric Clojure v3 development guidelines. Electric clojure namespaces are usually `*.cljc` files and `(:require [hyperfiddle.electric3 :as e])` in top-level namespace.
+```
+
+If you're using Claude Code, you'll want to mention the same (with corrected paths) in `CLAUDE.md`.
+
+A git submodule may be more convenient to keep up-to-date on the latest prompts. I'll add instructions once I figure out a convenient workflow.
 
 ## Personal Conventions
 
 - The `!` prefix notation for references like atoms, e.g. `(def !state (atom {}))` is my preference because then `(swap! !state conj ...)` looks right, as well as `@!state` to distinguish from values.
 - The `!` suffix notation for effectful functions like `(defn save-user! [conn user-data] ...)` warns the user that this function is not pure.
 
-## Knowledge Sources:
+## Knowledge Was Derived from these Sources:
 
 - [Elements of Clojure](http://elementsofclojure.com/) by [Zachary Tellman](https://github.com/ztellman).
 - [The Joy of Clojure (2nd Edition)](https://www.manning.com/books/the-joy-of-clojure-second-edition) by Michael Fogus and Chris Houser
-- [Electric Clojure v3 Tutorials (as of 2025-03-23)](https://gitlab.com/hyperfiddle/electric-fiddle/-/tree/de2bad00eb29312bae7a0641385f42cd07a218fd) by Hyperfiddle.
+- [Electric Clojure v3 Tutorials (as of 2025-03-23)](https://gitlab.com/hyperfiddle/electric-fiddle/-/tree/de2bad00eb29312bae7a0641385f42cd07a218fd) by [Hyperfiddle](https://www.hyperfiddle.net/).
 
 Elements of Clojure is the book I would have written about Clojure, if I could. All hail, Tellman.
 
