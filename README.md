@@ -12,7 +12,7 @@ Currently the files are quite long and could be more concise, but I would rather
 
 ## How to Use These Prompts
 
-TODO: but basically put these *.mdc under `.cursor/rules` in your project and mention them in your CLAUDE.md file.
+TODO: but basically put these *.mdc files under `.cursor/rules` in your project and mention them in `CLAUDE.md` and/or `.cursor/README.md` file.
 
 A more convenient way to stay up-to-date with the latest versions will be to use a git submodule. I'm not sure how to do that without clobbering other files in your `.cursor/rules` path.
 
