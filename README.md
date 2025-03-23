@@ -1,4 +1,4 @@
-# Clojure AI Prompts (`.cursor/rules`) + Electric Clojure v3
+# AI Prompts for Clojure &  Electric Clojure v3 / Cursor Rules
 
 AI coding guidelines for Clojure & Electric Clojure v3 (ala `.cursor/rules`) to help LLMs write idiomatic Clojure code when working on large projects.
 
@@ -29,7 +29,7 @@ A more convenient way to stay up-to-date with the latest versions will be to use
 
 Elements of Clojure is the book I would have written about Clojure, if I could. All hail, Tellman.
 
-## WARNING: Electric Clojure v3 is in Flux & Guidelines Will Be WRong
+## WARNING: Electric Clojure v3 is in active development & guidelines will have mistakes
 
 I added guidelines for Electric v3 because models with a knowledge cut-off in 2024  tend to output Electric v2 code even when I ask for v3 code.
 
