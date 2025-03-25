@@ -1637,20 +1637,15 @@ Macros are particularly useful in several specific scenarios.
      (:import (java.util Date HashMap)))
    ```
 
-7. **Use memfn to adapt Java methods for higher-order functions**:
-   ```clojure
-   (mapv (memfn toLowerCase) ["A" "B" "C"])
-   ```
-
-8. **Understand boxing/unboxing for primitives**: Operations on primitives can cause boxing/unboxing overhead. Use type hints to avoid this:
+7. **Understand boxing/unboxing for primitives**: Operations on primitives can cause boxing/unboxing overhead. Use type hints to avoid this:
    ```clojure
    (defn add ^long [^long a ^long b]
      (+ a b))
    ```
 
-9. **Use array-specific functions for Java arrays**: Functions like `amap`, `aget`, and `aset` are optimized for working with Java arrays.
+8. **Use array-specific functions for Java arrays**: Functions like `amap`, `aget`, and `aset` are optimized for working with Java arrays.
 
-10. **Consider gen-class for Java integration**: When you need to implement Java interfaces or extend Java classes.
+9. **Consider gen-class for Java integration**: When you need to implement Java interfaces or extend Java classes.
 
 ### 9.2 Working with the Clojure Ecosystem
 
@@ -1674,11 +1669,9 @@ Macros are particularly useful in several specific scenarios.
 
 6. **Follow community conventions**: Adhere to established patterns in the Clojure community.
 
-7. **Stay current with ecosystem developments**: Keep up with changes in the Clojure ecosystem.
+7. **Test integration with external libraries**: Ensure that your code works correctly with the libraries you depend on.
 
-8. **Test integration with external libraries**: Ensure that your code works correctly with the libraries you depend on.
-
-9. **Document external dependencies**: Make it clear what external libraries your code depends on and why.
+8. **Document external dependencies**: Make it clear what external libraries your code depends on and why.
 
 ### 9.3 Performance Optimization
 
@@ -1717,7 +1710,7 @@ Macros are particularly useful in several specific scenarios.
      (reduce conj! (transient []) (range 1000000)))
    ```
 
-4. **Use loop/recur for tight loops**: Explicit loop/recur can be faster than higher-order functions for simple iterations that don't need parallelization vir `pmap`.
+4. **Use loop/recur for tight loops**: Explicit loop/recur can be faster than higher-order functions for simple iterations.
 
 5. **Consider chunked sequence operations**: Functions like `reduce-kv` for maps or `run!` for side effects can be more efficient than their general counterparts.
 
@@ -1736,7 +1729,7 @@ Macros are particularly useful in several specific scenarios.
    - Vectors for indexed access
    - Sets for membership testing
 
-9. **Use transducers for efficient transformations**: Transducers can be more efficient than composed higher-order functions:
+9. **Use transducers for efficient transformations**: Transducers can be composed and avoid intermediate memory allocation:
     ```clojure
     (def xform (comp (map inc) (filter even?)))
     (transduce xform conj [] (range 1000000))
